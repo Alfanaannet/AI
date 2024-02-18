@@ -59,7 +59,7 @@ async def on_ready():
   print(print_in_color(f"  Loaded {num_commands} commands", "1;35"))
   print(print_in_color(f"      Invite link: {invite_link}", "1;36"))
   keep_alive()
-  await bot.change_presence(activity=discord.Game(name="・💻┆ITS COMMUNITY"))
+  await bot.change_presence(status=discord.Status.idle, activity=discord.Game(name="・💻┆ITS COMMUNITY"))
 
 # Function to generate response based on custom personality prompts
 
