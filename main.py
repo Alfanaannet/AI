@@ -38,9 +38,9 @@ async def on_ready():
     return f"\033[{color}m{text}\033[0m"
 
   if os.name == 'posix':
-    os.system('clear')
+    #os.system('clear')
   elif os.name == 'nt':
-    os.system('cls')
+   # os.system('cls')
   print(
       print_in_color(
           f"{bot.user} aka {bot.user.name} has connected to Discord!",
