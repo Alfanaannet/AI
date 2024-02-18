@@ -37,14 +37,11 @@ async def on_ready():
   def print_in_color(text, color):
     return f"\033[{color}m{text}\033[0m"
 
-  if os.name == 'posix':
+ # if os.name == 'posix':
     #os.system('clear')
-  elif os.name == 'nt':
+  #elif os.name == 'nt':
    # os.system('cls')
-  print(
-      print_in_color(
-          f"{bot.user} aka {bot.user.name} has connected to Discord!",
-          "\033[1;97"))
+  print(print_in_color(f"{bot.user} aka {bot.user.name} has connected to Discord!", "\033[1;97"))
   print(print_in_color(f"  Loaded {num_commands} commands", "1;35"))
   print(print_in_color(f"      Invite link: {invite_link}", "1;36"))
 
