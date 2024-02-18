@@ -12,7 +12,21 @@ import aiohttp
 import discord
 import google.generativeai as genai
 from dotenv import load_dotenv
+from flask import Flask
+from threading import Thread
 
+app = Flask('')
+
+@app.route('/')
+def main():
+  return "Your bot is alive!"
+
+def run():
+    app.run(host="0.0.0.0", port=8080)
+
+def keep_alive():
+    server = Thread(target=run)
+    server.start()
 message_history = {}
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="/", intents=intents, heartbeat_timeout=60)
@@ -44,6 +58,7 @@ async def on_ready():
   print(print_in_color(f"{bot.user} aka {bot.user.name} has connected to Discord!", "\033[1;97"))
   print(print_in_color(f"  Loaded {num_commands} commands", "1;35"))
   print(print_in_color(f"      Invite link: {invite_link}", "1;36"))
+  keep_alive()
 
 
 # Function to generate response based on custom personality prompts
