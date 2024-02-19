@@ -190,7 +190,7 @@ async def generate_response_with_text(message_text):
   print("Got textPrompt: " + message_text)
   response = text_model.generate_content(prompt_parts)
   if (response._error):
-    return "❌" + str("العب بيعيد ياسطا بالله عليك ميجيش معاك اني بوت لا ده انا سوابق")
+    return "❌" + str("العب بعيد ياسط بالله عليك ميجيش معاك اني بوت لا ده انا سوابق")
   return response.text
 
 
@@ -201,7 +201,7 @@ async def generate_response_with_image_and_text(image_data, text):
   ]
   response = image_model.generate_content(prompt_parts)
   if (response._error):
-    return "❌" + str("العب بيعيد ياسطا بالله عليك ميجيش معاك اني بوت لا ده انا سوابق")
+    return "❌" + str("العب بعيد ياسط بالله عليك ميجيش معاك اني بوت لا ده انا سوابق")
   return response.text
 
 
